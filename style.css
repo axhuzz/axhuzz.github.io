@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050b14;
+  color: #e6faff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.buttons a {
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 12px 25px;
+  border: 1px solid cyan;
+  color: cyan;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: cyan;
+  color: #000;
+  box-shadow: 0 0 25px cyan;
+}
+
+/* GLITCH TEXT */
+.glitch {
+  font-size: 3rem;
+  position: relative;
+  color: cyan;
+  text-shadow: 0 0 15px cyan;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.glitch::before {
+  top: -2px;
+  color: magenta;
+  animation: glitch 2s infinite;
+}
+
+.glitch::after {
+  top: 2px;
+  color: lime;
+  animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(0 0 90% 0); }
+  50% { clip-path: inset(40% 0 40% 0); }
+  100% { clip-path: inset(90% 0 0 0); }
+}
+
+/* GLASS SECTIONS */
+.glass {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(0,255,255,0.07);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  animation: fadeUp 1s ease;
+}
+
+.glass h2 {
+  margin-bottom: 15px;
+  color: cyan;
+}
+
+/* SOCIALS */
+.socials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.socials a {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid cyan;
+  border-radius: 12px;
+  color: cyan;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: cyan;
+  color: #000;
+  box-shadow: 0 0 20px cyan;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
